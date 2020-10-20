@@ -1,0 +1,30 @@
+Names:
+- MC Entropy
+- MC Error
+- Gauss Entropy
+- Gauss Error
+- Expected Entropy
+- Surprise
+- sD
+- Gauss Entropy converged
+- Gauss Error converged
+- Expected Entropy converged
+- Surprise converged
+- sD converged
+- Entropy no BC
+- Expected Entropy no BC
+tt_dd_kk_samples_sim:
+- '5.711'
+- '0.063'
+- None
+- '0.0'
+- None
+- None
+- None
+- None
+- None
+- None
+- None
+- None
+- '3.151'
+- '3.991'

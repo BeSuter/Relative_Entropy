@@ -1,0 +1,75 @@
+Names:
+- MC Entropy
+- MC Error
+- Gauss Entropy
+- Gauss Error
+- Expected Entropy
+- Surprise
+- sD
+- Gauss Entropy converged
+- Gauss Error converged
+- Expected Entropy converged
+- Surprise converged
+- sD converged
+- Entropy no BC
+- Expected Entropy no BC
+dd_gg_kk_samples_Gaussian_nonuisance:
+- '0.565'
+- '0.005'
+- '0.56'
+- '0.0'
+- '1.887'
+- '-1.327'
+- '0.961'
+- '0.425'
+- '0.0'
+- '1.635'
+- '-1.21'
+- '0.867'
+- '0.876'
+- '2.328'
+dd_gg_kk_samples_sim_nonuisance:
+- '0.561'
+- '0.006'
+- '0.409'
+- '0.0'
+- '1.525'
+- '-1.117'
+- '0.839'
+- '0.348'
+- '0.0'
+- '1.387'
+- '-1.039'
+- '0.781'
+- '0.413'
+- '1.558'
+dd_gg_samples_Gaussian_nonuisance:
+- '0.327'
+- '0.003'
+- '0.146'
+- '0.0'
+- '0.766'
+- '-0.62'
+- '0.539'
+- '0.14'
+- '0.0'
+- '0.736'
+- '-0.597'
+- '0.53'
+- '0.15'
+- '0.789'
+dd_gg_samples_sim_nonuisance:
+- '0.304'
+- '0.005'
+- '0.075'
+- '0.0'
+- '0.417'
+- '-0.343'
+- '0.39'
+- '0.077'
+- '0.0'
+- '0.411'
+- '-0.333'
+- '0.402'
+- '0.077'
+- '0.426'

@@ -1,0 +1,84 @@
+Names:
+- MC Entropy
+- Gauss Entropy
+- Expected Entropy
+- Surprise
+- sD
+dd_gg_samples_Gaussian:
+- '[2.965] +/- 0.018 [Bits]'
+- 4.167 [Bits]
+- 13.182 [Bits]
+- -9.015 [Bits]
+- 7.555 [Bits]
+dd_gg_samples_sim:
+- '[3.749] +/- 0.006 [Bits]'
+- 3.52 [Bits]
+- 9.311 [Bits]
+- -5.791 [Bits]
+- 3.899 [Bits]
+dd_kk_samples_Gaussian:
+- '[6.708] +/- 0.009 [Bits]'
+- 7.485 [Bits]
+- 11.254 [Bits]
+- -3.768 [Bits]
+- 2.816 [Bits]
+dd_kk_samples_Gaussian_nonuisance:
+- '[1.687] +/- 0.006 [Bits]'
+- 1.682 [Bits]
+- 7.083 [Bits]
+- -5.4 [Bits]
+- 3.505 [Bits]
+dd_kk_samples_sim:
+- '[6.176] +/- 0.008 [Bits]'
+- 6.41 [Bits]
+- 10.459 [Bits]
+- -4.049 [Bits]
+- 2.995 [Bits]
+dd_kk_samples_sim_nonuisance:
+- '[1.457] +/- 0.005 [Bits]'
+- 1.434 [Bits]
+- 7.104 [Bits]
+- -5.67 [Bits]
+- 3.662 [Bits]
+tt_dd_samples_Gaussian:
+- '[5.591] +/- 0.008 [Bits]'
+- 5.351 [Bits]
+- 9.806 [Bits]
+- -4.456 [Bits]
+- 3.319 [Bits]
+tt_dd_samples_Gaussian_nonuisance:
+- '[0.861] +/- 0.006 [Bits]'
+- 0.697 [Bits]
+- 6.539 [Bits]
+- -5.842 [Bits]
+- 3.757 [Bits]
+tt_dd_samples_sim_nonuisance:
+- '[0.519] +/- 0.003 [Bits]'
+- 0.388 [Bits]
+- 6.601 [Bits]
+- -6.213 [Bits]
+- 3.968 [Bits]
+tt_gg_samples_Gaussian_nonuisance:
+- '[0.672] +/- 0.004 [Bits]'
+- 0.466 [Bits]
+- 6.506 [Bits]
+- -6.04 [Bits]
+- 3.869 [Bits]
+tt_gg_samples_sim_nonuisance:
+- '[0.689] +/- 0.004 [Bits]'
+- 0.543 [Bits]
+- 7.039 [Bits]
+- -6.495 [Bits]
+- 4.181 [Bits]
+tt_kk_samples_Gaussian_nonuisance:
+- '[1.77] +/- 0.086 [Bits]'
+- 1.56 [Bits]
+- 7.146 [Bits]
+- -5.586 [Bits]
+- 3.625 [Bits]
+tt_kk_samples_sim_nonuisance:
+- '[2.004] +/- 0.006 [Bits]'
+- 1.964 [Bits]
+- 7.403 [Bits]
+- -5.439 [Bits]
+- 3.51 [Bits]
