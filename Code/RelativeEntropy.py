@@ -787,5 +787,7 @@ Chi2ComparisonPlot(gaussianity_hist,
 
 if __name__ == "__main__":
     print("Executing Entropy Comparison")
-    EntropyComparison(FourProbesData, 1, '../YAML/TestingCode.yml',
-                      MCsteps=8000)
+    EntropyComparison(TwoProbesData, 15, '../YAML/TwoProb_avrg15_MCsteps150000.yml',
+                      MCsteps=150000)
+    EntropyComparison(ThreeProbesData, 20, '../YAML/TwoProb_avrg20_MCsteps150000.yml',
+                      MCsteps=150000)
