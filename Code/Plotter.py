@@ -228,15 +228,15 @@ def MonteCarloHistogram(prior_data, post_data, iterations, target=None,
         target = target
     elif isinstance(prior_data, str):
         name = prior_data[10:].replace('.npy', '')
-        target = './Plots/MonteCarloHistogram/AutoCross_%s.pdf' % name
+        target = '../Plots/MonteCarloHistogram/AutoCross_%s.pdf' % name
     else:
         if not os.path.isfile('./Plots/MonteCarloHistogram/NotSpecified.pdf'):
-            target = './Plots/MonteCarloHistogram/NotSpecified.pdf'
+            target = '../Plots/MonteCarloHistogram/NotSpecified.pdf'
         else:
             i = 1
-            while os.path.isfile('./Plots/MonteCarloHistogram/NotSpecified%s.pdf' % i):
+            while os.path.isfile('../Plots/MonteCarloHistogram/NotSpecified%s.pdf' % i):
                 i += 1
-            target = './Plots/MonteCarloHistogram/NotSpecified%s.pdf' % i
+            target = '../Plots/MonteCarloHistogram/NotSpecified%s.pdf' % i
     
     entropy = []
     

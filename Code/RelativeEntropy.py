@@ -21,72 +21,72 @@ import yaml
 #
 #
 # Two probes auto-correlated data
-tt_kk_sim = "./Samples/tt_kk_samples_sim.npy"
+tt_kk_sim = "../Samples/tt_kk_samples_sim.npy"
 #350000
 '''GetDistContourPlot(tt_kk_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_kk_sim.pdf', burning=350000)'''
-tt_kk_gauss = "./Samples/tt_kk_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_kk_sim.pdf', burning=350000)'''
+tt_kk_gauss = "../Samples/tt_kk_samples_Gaussian.npy"
 #350000
 '''GetDistContourPlot(tt_kk_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_kk_gauss.pdf', burning=350000)'''
-tt_gg_sim = "./Samples/tt_gg_samples_sim.npy"
+                   '../Plots/Contour/tt_kk_gauss.pdf', burning=350000)'''
+tt_gg_sim = "../Samples/tt_gg_samples_sim.npy"
 #350000
 '''GetDistContourPlot(tt_gg_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_gg_sim.pdf', burning=350000)'''
-tt_gg_gauss = "./Samples/tt_gg_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_gg_sim.pdf', burning=350000)'''
+tt_gg_gauss = "../Samples/tt_gg_samples_Gaussian.npy"
 #350000
 '''GetDistContourPlot(tt_gg_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_gg_gauss.pdf', burning=350000)'''
-tt_dd_sim = "./Samples/tt_dd_samples_sim.npy"
+                   '../Plots/Contour/tt_gg_gauss.pdf', burning=350000)'''
+tt_dd_sim = "../Samples/tt_dd_samples_sim.npy"
 #350000
 '''GetDistContourPlot(tt_dd_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_dd_sim.pdf', burning=350000)'''
-tt_dd_gauss = "./Samples/tt_dd_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_dd_sim.pdf', burning=350000)'''
+tt_dd_gauss = "../Samples/tt_dd_samples_Gaussian.npy"
 #300000
 '''GetDistContourPlot(tt_dd_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_dd_gauss.pdf', burning=300000)'''
+                   '../Plots/Contour/tt_dd_gauss.pdf', burning=300000)'''
 #gg_kk_sim = "./Samples/gg_kk_samples_sim.npy"
 #gg_kk_gauss = "./Samples/gg_kk_samples_Gaussian.npy"
-dd_kk_sim = "./Samples/dd_kk_samples_sim.npy"
+dd_kk_sim = "../Samples/dd_kk_samples_sim.npy"
 #320000
 '''GetDistContourPlot(dd_kk_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/dd_kk_sim.pdf', burning=320000)'''
-dd_kk_gauss = "./Samples/dd_kk_samples_Gaussian.npy"
+                   '../Plots/Contour/dd_kk_sim.pdf', burning=320000)'''
+dd_kk_gauss = "../Samples/dd_kk_samples_Gaussian.npy"
 #250000
 '''GetDistContourPlot(dd_kk_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/dd_kk_gauss.pdf', burning=250000)'''
-dd_gg_sim = "./Samples/dd_gg_samples_sim.npy"
+                   '../Plots/Contour/dd_kk_gauss.pdf', burning=250000)'''
+dd_gg_sim = "../Samples/dd_gg_samples_sim.npy"
 #300000
 '''GetDistContourPlot(dd_gg_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/dd_gg_sim.pdf', burning=300000)'''
-dd_gg_gauss = "./Samples/dd_gg_samples_Gaussian.npy"
+                   '../Plots/Contour/dd_gg_sim.pdf', burning=300000)'''
+dd_gg_gauss = "../Samples/dd_gg_samples_Gaussian.npy"
 #300000
 '''tmp = np.load(dd_gg_gauss)
 pri_burn = int(np.shape(tmp)[0]/2)
@@ -95,493 +95,448 @@ GetDistContourPlot(dd_gg_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/dd_gg_gauss.pdf', burning=pri_burn)'''
+                   '../Plots/Contour/dd_gg_gauss.pdf', burning=pri_burn)'''
 #
 # Two probes cross_correlated data
-tt_tk_kk_sim = "./Samples/tt_tk_kk_samples_sim.npy"
+tt_tk_kk_sim = "../Samples/tt_tk_kk_samples_sim.npy"
 #210000
 '''GetDistContourPlot(tt_tk_kk_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_tk_kk_sim.pdf', burning=210000)'''
-tt_tk_kk_gauss = "./Samples/tt_tk_kk_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_tk_kk_sim.pdf', burning=210000)'''
+tt_tk_kk_gauss = "../Samples/tt_tk_kk_samples_Gaussian.npy"
 #220000
 '''GetDistContourPlot(tt_tk_kk_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_tk_kk_gauss.pdf', burning=220000)'''
-tt_tg_gg_sim = "./Samples/tt_tg_gg_samples_sim.npy"
+                   '../Plots/Contour/tt_tk_kk_gauss.pdf', burning=220000)'''
+tt_tg_gg_sim = "../Samples/tt_tg_gg_samples_sim.npy"
 #280000
 '''GetDistContourPlot(tt_tg_gg_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_tg_gg_sim.pdf', burning=280000)'''
-tt_tg_gg_gauss = "./Samples/tt_tg_gg_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_tg_gg_sim.pdf', burning=280000)'''
+tt_tg_gg_gauss = "../Samples/tt_tg_gg_samples_Gaussian.npy"
 #220000
 '''GetDistContourPlot(tt_tg_gg_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_tg_gg_gauss.pdf', burning=220000)'''
-tt_td_dd_sim = "./Samples/tt_td_dd_samples_sim.npy"
+                   '../Plots/Contour/tt_tg_gg_gauss.pdf', burning=220000)'''
+tt_td_dd_sim = "../Samples/tt_td_dd_samples_sim.npy"
 #280000
 '''GetDistContourPlot(tt_td_dd_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_sim.pdf', burning=280000)'''
-tt_td_dd_gauss = "./Samples/tt_td_dd_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_td_dd_sim.pdf', burning=280000)'''
+tt_td_dd_gauss = "../Samples/tt_td_dd_samples_Gaussian.npy"
 #220000
 '''GetDistContourPlot(tt_td_dd_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_gauss.pdf', burning=220000)'''
-dd_dk_kk_sim = "./Samples/dd_dk_kk_samples_sim.npy"
+                   '../Plots/Contour/tt_td_dd_gauss.pdf', burning=220000)'''
+dd_dk_kk_sim = "../Samples/dd_dk_kk_samples_sim.npy"
 #150000
 '''GetDistContourPlot(dd_dk_kk_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/dd_dk_kk_sim.pdf', burning=150000)'''
-dd_dk_kk_gauss = "./Samples/dd_dk_kk_samples_Gaussian.npy"
+                   '../Plots/Contour/dd_dk_kk_sim.pdf', burning=150000)'''
+dd_dk_kk_gauss = "../Samples/dd_dk_kk_samples_Gaussian.npy"
 #180000
 '''GetDistContourPlot(dd_dk_kk_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/dd_dk_kk_gauss.pdf', burning=180000)'''
-dd_dg_gg_sim = "./Samples/dd_dg_gg_samples_sim.npy"
+                   '../Plots/Contour/dd_dk_kk_gauss.pdf', burning=180000)'''
+dd_dg_gg_sim = "../Samples/dd_dg_gg_samples_sim.npy"
 #160000
 '''GetDistContourPlot(dd_dg_gg_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/dd_dg_gg_sim.pdf', burning=160000)'''
-dd_dg_gg_gauss = "./Samples/dd_dg_gg_samples_Gaussian.npy"
+                   '../Plots/Contour/dd_dg_gg_sim.pdf', burning=160000)'''
+dd_dg_gg_gauss = "../Samples/dd_dg_gg_samples_Gaussian.npy"
 #120000
 '''GetDistContourPlot(dd_dg_gg_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2"],
                    'test plot',
-                   './Plots/Contour/dd_dg_gg_gauss.pdf', burning=120000)'''
+                   '../Plots/Contour/dd_dg_gg_gauss.pdf', burning=120000)'''
 #
 # Three probes auto-correlated
-tt_gg_kk_sim = "./Samples/tt_gg_kk_samples_sim.npy"
+tt_gg_kk_sim = "../Samples/tt_gg_kk_samples_sim.npy"
 #400000
 '''GetDistContourPlot(tt_gg_kk_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_gg_kk_sim.pdf', burning=400000)'''
-tt_gg_kk_gauss = "./Samples/tt_gg_kk_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_gg_kk_sim.pdf', burning=400000)'''
+tt_gg_kk_gauss = "../Samples/tt_gg_kk_samples_Gaussian.npy"
 '''GetDistContourPlot(tt_gg_kk_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_gg_kk_gauss.pdf', burning=450000)'''
+                   '../Plots/Contour/tt_gg_kk_gauss.pdf', burning=450000)'''
 #450000
-tt_dd_kk_sim = "./Samples/tt_dd_kk_samples_sim.npy"
+tt_dd_kk_sim = "../Samples/tt_dd_kk_samples_sim.npy"
 #400000
 '''GetDistContourPlot(tt_dd_kk_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_dd_kk_sim.pdf', burning=400000)'''
-tt_dd_kk_gauss = "./Samples/tt_dd_kk_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_dd_kk_sim.pdf', burning=400000)'''
+tt_dd_kk_gauss = "../Samples/tt_dd_kk_samples_Gaussian.npy"
 #450000
 '''GetDistContourPlot(tt_dd_kk_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_dd_kk_gauss.pdf', burning=450000)'''
-tt_dd_gg_sim = "./Samples/tt_dd_gg_samples_sim.npy"
+                   '../Plots/Contour/tt_dd_kk_gauss.pdf', burning=450000)'''
+tt_dd_gg_sim = "../Samples/tt_dd_gg_samples_sim.npy"
 #400000
 '''GetDistContourPlot(tt_dd_gg_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_dd_gg_sim.pdf', burning=400000)'''
-tt_dd_gg_gauss = "./Samples/tt_dd_gg_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_dd_gg_sim.pdf', burning=400000)'''
+tt_dd_gg_gauss = "../Samples/tt_dd_gg_samples_Gaussian.npy"
 
 #450000
 '''GetDistContourPlot(tt_dd_gg_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_dd_gg_gauss.pdf', burning=450000)'''
-dd_gg_kk_sim = "./Samples/dd_gg_kk_samples_sim.npy"
+                   '../Plots/Contour/tt_dd_gg_gauss.pdf', burning=450000)'''
+dd_gg_kk_sim = "../Samples/dd_gg_kk_samples_sim.npy"
 #400000
 '''GetDistContourPlot(dd_gg_kk_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/dd_gg_kk_sim.pdf', burning=400000)'''
-dd_gg_kk_gauss = "./Samples/dd_gg_kk_samples_Gaussian.npy"
+                   '../Plots/Contour/dd_gg_kk_sim.pdf', burning=400000)'''
+dd_gg_kk_gauss = "../Samples/dd_gg_kk_samples_Gaussian.npy"
 #400000
 '''GetDistContourPlot(dd_gg_kk_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/dd_gg_kk_gauss.pdf', burning=400000)'''
+                   '../Plots/Contour/dd_gg_kk_gauss.pdf', burning=400000)'''
 #
 # Three probes cross-correlated
-tt_tg_gg_gk_kk_sim = "./Samples/tt_tg_gg_gk_kk_samples_sim.npy"
+tt_tg_gg_gk_kk_sim = "../Samples/tt_tg_gg_gk_kk_samples_sim.npy"
 #350000
 '''GetDistContourPlot(tt_tg_gg_gk_kk_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_tg_gg_gk_kk_sim.pdf', burning=350000)'''
-tt_tg_gg_gk_kk_gauss = "./Samples/tt_tg_gg_gk_kk_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_tg_gg_gk_kk_sim.pdf', burning=350000)'''
+tt_tg_gg_gk_kk_gauss = "../Samples/tt_tg_gg_gk_kk_samples_Gaussian.npy"
 #350000
 '''GetDistContourPlot(tt_tg_gg_gk_kk_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_tg_gg_gk_kk_gauss.pdf', burning=350000)'''
-tt_td_dd_dk_kk_sim = "./Samples/tt_td_dd_dk_kk_samples_sim.npy"
+                   '../Plots/Contour/tt_tg_gg_gk_kk_gauss.pdf', burning=350000)'''
+tt_td_dd_dk_kk_sim = "../Samples/tt_td_dd_dk_kk_samples_sim.npy"
 #250000
 '''GetDistContourPlot(tt_td_dd_dk_kk_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_dk_kk_sim.pdf', burning=250000)'''
-tt_td_dd_dk_kk_gauss = "./Samples/tt_td_dd_dk_kk_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_td_dd_dk_kk_sim.pdf', burning=250000)'''
+tt_td_dd_dk_kk_gauss = "../Samples/tt_td_dd_dk_kk_samples_Gaussian.npy"
 #250000
 '''GetDistContourPlot(tt_td_dd_dk_kk_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_dk_kk_gauss.pdf', burning=250000)'''
-tt_td_dd_dg_gg_sim = "./Samples/tt_td_dd_dg_gg_samples_sim.npy"
+                   '../Plots/Contour/tt_td_dd_dk_kk_gauss.pdf', burning=250000)'''
+tt_td_dd_dg_gg_sim = "../Samples/tt_td_dd_dg_gg_samples_sim.npy"
 #250000
 '''GetDistContourPlot(tt_td_dd_dg_gg_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_dg_gg_sim.pdf', burning=250000)'''
-tt_td_dd_dg_gg_gauss = "./Samples/tt_td_dd_dg_gg_samples_Gaussian.npy"
+                   '../Plots/Contour/tt_td_dd_dg_gg_sim.pdf', burning=250000)'''
+tt_td_dd_dg_gg_gauss = "../Samples/tt_td_dd_dg_gg_samples_Gaussian.npy"
 #250000
 '''GetDistContourPlot(tt_td_dd_dg_gg_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_dg_gg_gauss.pdf', burning=250000)'''
-dd_dg_gg_gk_kk_sim = "./Samples/dd_dg_gg_gk_kk_samples_sim.npy"
+                   '../Plots/Contour/tt_td_dd_dg_gg_gauss.pdf', burning=250000)'''
+dd_dg_gg_gk_kk_sim = "../Samples/dd_dg_gg_gk_kk_samples_sim.npy"
 #400000
 '''GetDistContourPlot(dd_dg_gg_gk_kk_sim,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/dd_dg_gg_gk_kk_sim.pdf', burning=400000)'''
-dd_dg_gg_gk_kk_gauss = "./Samples/dd_dg_gg_gk_kk_samples_Gaussian.npy"
+                   '../Plots/Contour/dd_dg_gg_gk_kk_sim.pdf', burning=400000)'''
+dd_dg_gg_gk_kk_gauss = "../Samples/dd_dg_gg_gk_kk_samples_Gaussian.npy"
 #400000
 '''GetDistContourPlot(dd_dg_gg_gk_kk_gauss,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8", "m_1", "m_2", "m_3"],
                    'test plot',
-                   './Plots/Contour/dd_dg_gg_gk_kk_gauss.pdf', burning=400000)'''
+                   '../Plots/Contour/dd_dg_gg_gk_kk_gauss.pdf', burning=400000)'''
 #
 # 4 probes
 #SamplePath = "./Samples/tt_dd_gg_kk_samples.npy"
-Auto_Gaussian = "./Samples/4probes_auto_samples_Gaussian.npy"
-Auto_Sim = "./Samples/4probes_auto_samples_sim.npy"
-Cross_Gaussian = "./Samples/4probes_cross_samples_Gaussian.npy"
-Cross_Sim = "./Samples/4probes_cross_samples_sim.npy"
-
-
-
-#print(LoadAndComputeEntropy(dd_gg_gauss, dd_dg_gg_gauss, steps=4)[3])
-
-'''print('Testing MonteCarlo')
-
-print(MonteCarloENTROPY(dd_gg_kk_gauss, dd_dg_gg_gk_kk_gauss, 1000, error=True,
-                        pri_burn=400000, post_burn=400000))'''
-
-
-'''print(MonteCarloHistogram(Auto_Gaussian, Cross_Gaussian, 5,
-                          MCsteps=100, entropy_str=True))'''
-'''print('Logarithmic score')
-print(LogarithmicScore(Cross_Gaussian))
-print('')
-auto_cross_gauss = LoadAndComputeEntropy(Auto_Gaussian,
-                                         Cross_Gaussian, steps=20,
-                                         pri_burn=200000, post_burn=200000)
-print('Logarithmic score after BoxCox')
-print(LogarithmicScore(auto_cross_gauss[1].T))
-print('Auto_Cross_D_G_K_Gauss done')
-print('Computed values: ')
-print('Relative Entropy: ', auto_cross_gauss[2])
-print('Surprise: ', auto_cross_gauss[4])
-print('dS: ', auto_cross_gauss[5])
-print('')'''
+Auto_Gaussian = "../Samples/4probes_auto_samples_Gaussian.npy"
+Auto_Sim = "../Samples/4probes_auto_samples_sim.npy"
+Cross_Gaussian = "../Samples/4probes_cross_samples_Gaussian.npy"
+Cross_Sim = "../Samples/4probes_cross_samples_sim.npy"
 #
 #------------------------------------------------------------------------------
 #Probes with no nuisance parameters
 #
 #Two probes auto-correlated
-tt_kk_sim_noN = "./Samples/tt_kk_samples_sim_nonuisance.npy"
+tt_kk_sim_noN = "../Samples/tt_kk_samples_sim_nonuisance.npy"
 #480000
 '''GetDistContourPlot(tt_kk_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_kk_sim_noN.pdf', burning=480000)'''
-tt_kk_gauss_noN = "./Samples/tt_kk_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/tt_kk_sim_noN.pdf', burning=480000)'''
+tt_kk_gauss_noN = "../Samples/tt_kk_samples_Gaussian_nonuisance.npy"
 #520000
 '''GetDistContourPlot(tt_kk_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_kk_gauss_noN.pdf', burning=520000)'''
-tt_gg_sim_noN = "./Samples/tt_gg_samples_sim_nonuisance.npy"
+                   '../Plots/Contour/tt_kk_gauss_noN.pdf', burning=520000)'''
+tt_gg_sim_noN = "../Samples/tt_gg_samples_sim_nonuisance.npy"
 #500000
 '''GetDistContourPlot(tt_gg_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_gg_sim_noN.pdf', burning=500000)'''
-tt_gg_gauss_noN = "./Samples/tt_gg_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/tt_gg_sim_noN.pdf', burning=500000)'''
+tt_gg_gauss_noN = "../Samples/tt_gg_samples_Gaussian_nonuisance.npy"
 #510000
 '''GetDistContourPlot(tt_gg_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_gg_gauss_noN.pdf', burning=510000)'''
-tt_dd_sim_noN = "./Samples/tt_dd_samples_sim_nonuisance.npy"
+                   '../Plots/Contour/tt_gg_gauss_noN.pdf', burning=510000)'''
+tt_dd_sim_noN = "../Samples/tt_dd_samples_sim_nonuisance.npy"
 #530000
 '''GetDistContourPlot(tt_dd_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_dd_sim_noN.pdf', burning=530000)'''
-tt_dd_gauss_noN = "./Samples/tt_dd_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/tt_dd_sim_noN.pdf', burning=530000)'''
+tt_dd_gauss_noN = "../Samples/tt_dd_samples_Gaussian_nonuisance.npy"
 #530000
 '''GetDistContourPlot(tt_dd_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_dd_gauss_noN.pdf', burning=530000)'''
-gg_kk_sim_noN = "./Samples/gg_kk_samples_sim_nonuisance.npy"
+                   '../Plots/Contour/tt_dd_gauss_noN.pdf', burning=530000)'''
+gg_kk_sim_noN = "../Samples/gg_kk_samples_sim_nonuisance.npy"
 #380000
 '''GetDistContourPlot(gg_kk_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/gg_kk_sim_noN.pdf', burning=380000)'''
-gg_kk_gauss_noN = "./Samples/gg_kk_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/gg_kk_sim_noN.pdf', burning=380000)'''
+gg_kk_gauss_noN = "../Samples/gg_kk_samples_Gaussian_nonuisance.npy"
 #400000
 '''GetDistContourPlot(gg_kk_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/gg_kk_gauss_noN.pdf', burning=400000)'''
-dd_kk_sim_noN = "./Samples/dd_kk_samples_sim_nonuisance.npy"
+                   '../Plots/Contour/gg_kk_gauss_noN.pdf', burning=400000)'''
+dd_kk_sim_noN = "../Samples/dd_kk_samples_sim_nonuisance.npy"
 #400000
 '''GetDistContourPlot(dd_kk_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/dd_kk_sim_noN.pdf', burning=400000)'''
-dd_kk_gauss_noN = "./Samples/dd_kk_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/dd_kk_sim_noN.pdf', burning=400000)'''
+dd_kk_gauss_noN = "../Samples/dd_kk_samples_Gaussian_nonuisance.npy"
 #400000
 '''GetDistContourPlot(dd_kk_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/dd_kk_gauss_noN.pdf', burning=400000)'''
+                   '../Plots/Contour/dd_kk_gauss_noN.pdf', burning=400000)'''
 
 #Two probes cross-correlated
-tt_tk_kk_sim_noN = "./Samples/tt_tk_kk_samples_sim_nonuisance.npy"
+tt_tk_kk_sim_noN = "../Samples/tt_tk_kk_samples_sim_nonuisance.npy"
 #320000
 '''GetDistContourPlot(tt_tk_kk_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_tk_kk_sim_noN.pdf', burning=320000)'''
+                   '../Plots/Contour/tt_tk_kk_sim_noN.pdf', burning=320000)'''
 tt_tk_kk_gauss_noN = "./Samples/tt_tk_kk_samples_Gaussian_nonuisance.npy"
 #320000
 '''GetDistContourPlot(tt_tk_kk_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_tk_kk_gauss_noN.pdf', burning=320000)'''
-tt_tg_gg_sim_noN = "./Samples/tt_tg_gg_samples_sim_nonuisance.npy"
+                   '../Plots/Contour/tt_tk_kk_gauss_noN.pdf', burning=320000)'''
+tt_tg_gg_sim_noN = "../Samples/tt_tg_gg_samples_sim_nonuisance.npy"
 #430000
 '''GetDistContourPlot(tt_tg_gg_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_tg_gg_sim_noN.pdf', burning=430000)'''
-tt_tg_gg_gauss_noN = "./Samples/tt_tg_gg_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/tt_tg_gg_sim_noN.pdf', burning=430000)'''
+tt_tg_gg_gauss_noN = "../Samples/tt_tg_gg_samples_Gaussian_nonuisance.npy"
 #310000
 '''GetDistContourPlot(tt_tg_gg_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_tg_gg_gauss_noN.pdf', burning=310000)'''
-tt_td_dd_sim_noN = "./Samples/tt_td_dd_samples_sim_nonuisance.npy"
+                   '../Plots/Contour/tt_tg_gg_gauss_noN.pdf', burning=310000)'''
+tt_td_dd_sim_noN = "../Samples/tt_td_dd_samples_sim_nonuisance.npy"
 #350000
 '''GetDistContourPlot(tt_td_dd_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_sim_noN.pdf', burning=350000)'''
-tt_td_dd_gauss_noN = "./Samples/tt_td_dd_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/tt_td_dd_sim_noN.pdf', burning=350000)'''
+tt_td_dd_gauss_noN = "../Samples/tt_td_dd_samples_Gaussian_nonuisance.npy"
 #360000
 '''GetDistContourPlot(tt_td_dd_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_gauss_noN.pdf', burning=360000)'''
-dd_dk_kk_sim_noN = "./Samples/dd_dk_kk_samples_sim_nonuisance.npy"
+                   '../Plots/Contour/tt_td_dd_gauss_noN.pdf', burning=360000)'''
+dd_dk_kk_sim_noN = "../Samples/dd_dk_kk_samples_sim_nonuisance.npy"
 #210000
 '''GetDistContourPlot(dd_dk_kk_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/dd_dk_kk_sim_noN.pdf', burning=210000)'''
-dd_dk_kk_gauss_noN = "./Samples/dd_dk_kk_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/dd_dk_kk_sim_noN.pdf', burning=210000)'''
+dd_dk_kk_gauss_noN = "../Samples/dd_dk_kk_samples_Gaussian_nonuisance.npy"
 #210000
 '''GetDistContourPlot(dd_dk_kk_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/dd_dk_kk_gauss_noN.pdf', burning=210000)'''
+                   '../Plots/Contour/dd_dk_kk_gauss_noN.pdf', burning=210000)'''
 
 #Three probes auto-correlated
-tt_gg_kk_sim_noN = "./Samples/tt_gg_kk_samples_sim_nonuisance.npy"
+tt_gg_kk_sim_noN = "../Samples/tt_gg_kk_samples_sim_nonuisance.npy"
 #380000
 '''GetDistContourPlot(tt_gg_kk_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_gg_kk_sim_noN.pdf', burning=380000)'''
-tt_gg_kk_gauss_noN = "./Samples/tt_gg_kk_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/tt_gg_kk_sim_noN.pdf', burning=380000)'''
+tt_gg_kk_gauss_noN = "../Samples/tt_gg_kk_samples_Gaussian_nonuisance.npy"
 #360000
 '''GetDistContourPlot(tt_gg_kk_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_gg_kk_gauss_noN.pdf', burning=360000)'''
+                   '../Plots/Contour/tt_gg_kk_gauss_noN.pdf', burning=360000)'''
 
-tt_dd_kk_sim_noN = "./Samples/tt_dd_kk_samples_sim_nonuisance.npy"
+tt_dd_kk_sim_noN = "../Samples/tt_dd_kk_samples_sim_nonuisance.npy"
 #360000
 '''GetDistContourPlot(tt_dd_kk_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_dd_kk_sim_noN.pdf', burning=360000)'''
-tt_dd_kk_gauss_noN = "./Samples/tt_dd_kk_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/tt_dd_kk_sim_noN.pdf', burning=360000)'''
+tt_dd_kk_gauss_noN = "../Samples/tt_dd_kk_samples_Gaussian_nonuisance.npy"
 #360000
 '''GetDistContourPlot(tt_dd_kk_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_dd_kk_gauss_noN.pdf', burning=360000)'''
-tt_dd_gg_sim_noN = "./Samples/tt_dd_gg_samples_sim_nonuisance.npy"
+                   '../Plots/Contour/tt_dd_kk_gauss_noN.pdf', burning=360000)'''
+tt_dd_gg_sim_noN = "../Samples/tt_dd_gg_samples_sim_nonuisance.npy"
 #360000
 '''GetDistContourPlot(tt_dd_gg_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_dd_gg_sim_noN.pdf', burning=360000)'''
-tt_dd_gg_gauss_noN = "./Samples/tt_dd_gg_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/tt_dd_gg_sim_noN.pdf', burning=360000)'''
+tt_dd_gg_gauss_noN = "../Samples/tt_dd_gg_samples_Gaussian_nonuisance.npy"
 #360000
 '''GetDistContourPlot(tt_dd_gg_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_dd_gg_gauss_noN.pdf', burning=360000)'''
+                   '../Plots/Contour/tt_dd_gg_gauss_noN.pdf', burning=360000)'''
 
 #Three probes cross-correlated
-tt_tg_gg_gk_kk_sim_noN = "./Samples/tt_tg_gg_gk_kk_samples_sim_nonuisance.npy"
+tt_tg_gg_gk_kk_sim_noN = "../Samples/tt_tg_gg_gk_kk_samples_sim_nonuisance.npy"
 #230000
 '''GetDistContourPlot(tt_tg_gg_gk_kk_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_tg_gg_gk_kk_sim_noN.pdf', burning=230000)'''
-tt_tg_gg_gk_kk_gauss_noN = "./Samples/tt_tg_gg_gk_kk_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/tt_tg_gg_gk_kk_sim_noN.pdf', burning=230000)'''
+tt_tg_gg_gk_kk_gauss_noN = "../Samples/tt_tg_gg_gk_kk_samples_Gaussian_nonuisance.npy"
 #140000
 '''GetDistContourPlot(tt_tg_gg_gk_kk_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_tg_gg_gk_kk_gauss_noN.pdf', burning=140000)'''
-tt_td_dd_dk_kk_sim_noN = "./Samples/tt_td_dd_dk_kk_samples_sim_nonuisance.npy"
+                   '../Plots/Contour/tt_tg_gg_gk_kk_gauss_noN.pdf', burning=140000)'''
+tt_td_dd_dk_kk_sim_noN = "../Samples/tt_td_dd_dk_kk_samples_sim_nonuisance.npy"
 #220000
 '''GetDistContourPlot(tt_td_dd_dk_kk_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_dk_kk_sim_noN.pdf', burning=220000)'''
-tt_td_dd_dk_kk_gauss_noN = "./Samples/tt_td_dd_dk_kk_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/tt_td_dd_dk_kk_sim_noN.pdf', burning=220000)'''
+tt_td_dd_dk_kk_gauss_noN = "../Samples/tt_td_dd_dk_kk_samples_Gaussian_nonuisance.npy"
 #230000
 '''GetDistContourPlot(tt_td_dd_dk_kk_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_dk_kk_gauss_noN.pdf', burning=230000)'''
-tt_td_dd_dg_gg_sim_noN = "./Samples/tt_td_dd_dg_gg_samples_sim_nonuisance.npy"
+                   '../Plots/Contour/tt_td_dd_dk_kk_gauss_noN.pdf', burning=230000)'''
+tt_td_dd_dg_gg_sim_noN = "../Samples/tt_td_dd_dg_gg_samples_sim_nonuisance.npy"
 #220000
 '''GetDistContourPlot(tt_td_dd_dg_gg_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_dg_gg_sim_noN.pdf', burning=220000)'''
-tt_td_dd_dg_gg_gauss_noN = "./Samples/tt_td_dd_dg_gg_samples_Gaussian_nonuisance.npy"
+                   '../Plots/Contour/tt_td_dd_dg_gg_sim_noN.pdf', burning=220000)'''
+tt_td_dd_dg_gg_gauss_noN = "../Samples/tt_td_dd_dg_gg_samples_Gaussian_nonuisance.npy"
 #160000
 '''GetDistContourPlot(tt_td_dd_dg_gg_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
                     "\sigma_8"],
                    'test plot',
-                   './Plots/Contour/tt_td_dd_dg_gg_gauss_noN.pdf', burning=160000)'''
+                   '../Plots/Contour/tt_td_dd_dg_gg_gauss_noN.pdf', burning=160000)'''
 
 #Additional noNuisance samples
 #Two Probes
-dd_gg_sim_noN = './Samples/dd_gg_samples_sim_nonuisance.npy'
-dd_dg_gg_sim_noN = './Samples/dd_dg_gg_samples_sim_nonuisance.npy'
+dd_gg_sim_noN = '../Samples/dd_gg_samples_sim_nonuisance.npy'
+dd_dg_gg_sim_noN = '../Samples/dd_dg_gg_samples_sim_nonuisance.npy'
 
-dd_gg_gauss_noN = './Samples/dd_gg_samples_Gaussian_nonuisance.npy'
-dd_dg_gg_gauss_noN = './Samples/dd_dg_gg_samples_Gaussian_nonuisance.npy'
+dd_gg_gauss_noN = '../Samples/dd_gg_samples_Gaussian_nonuisance.npy'
+dd_dg_gg_gauss_noN = '../Samples/dd_dg_gg_samples_Gaussian_nonuisance.npy'
 
 #Three Probes
-dd_gg_kk_sim_noN = './Samples/dd_gg_kk_samples_sim_nonuisance.npy'
-dd_dg_gg_gk_kk_sim_noN = './Samples/dd_dg_gg_gk_kk_samples_sim_nonuisance.npy'
+dd_gg_kk_sim_noN = '../Samples/dd_gg_kk_samples_sim_nonuisance.npy'
+dd_dg_gg_gk_kk_sim_noN = '../Samples/dd_dg_gg_gk_kk_samples_sim_nonuisance.npy'
 
-dd_gg_kk_gauss_noN = './Samples/dd_gg_kk_samples_Gaussian_nonuisance.npy'
-dd_dg_gg_gk_kk_gauss_noN = './Samples/dd_dg_gg_gk_kk_samples_Gaussian_nonuisance.npy'
+dd_gg_kk_gauss_noN = '../Samples/dd_gg_kk_samples_Gaussian_nonuisance.npy'
+dd_dg_gg_gk_kk_gauss_noN = '../Samples/dd_dg_gg_gk_kk_samples_Gaussian_nonuisance.npy'
 
 #Four Probes
-Auto_Sim_noN = './Samples/tt_dd_gg_kk_samples_sim_nonuisance.npy'
-Cross_Sim_noN = './Samples/tt_td_dd_dg_gg_gk_kk_samples_sim_nonuisance.npy'
+Auto_Sim_noN = '../Samples/tt_dd_gg_kk_samples_sim_nonuisance.npy'
+Cross_Sim_noN = '../Samples/tt_td_dd_dg_gg_gk_kk_samples_sim_nonuisance.npy'
 
-Auto_Gauss_noN = './Samples/tt_dd_gg_kk_samples_Gaussian_nonuisance.npy'
-Cross_sim_noN = './Samples/tt_td_dd_dg_gg_gk_kk_samples_Gaussian_nonuisance.npy'
+Auto_Gauss_noN = '../Samples/tt_dd_gg_kk_samples_Gaussian_nonuisance.npy'
+Cross_sim_noN = '../Samples/tt_td_dd_dg_gg_gk_kk_samples_Gaussian_nonuisance.npy'
 
-
-
-
-
-
-
-'''tmp = np.load(dd_gg_gauss)
-pri_burn = int(np.shape(tmp)[0]/2)
-del(tmp)
-data1 = np.load(dd_gg_gauss)[pri_burn:,:5]
-
-tmp = np.load(dd_dg_gg_gauss)
-pri_burn = int(np.shape(tmp)[0]/2)
-del(tmp)
-data2 = np.load(dd_dg_gg_gauss)[pri_burn:,:5]
-sc = Surprise()
-print(sc(data1, data2, mode='replace')[1])
-print(LoadAndComputeEntropy(dd_gg_gauss, dd_dg_gg_gauss, steps=20)[3])'''
 
 #
 #
@@ -609,7 +564,7 @@ ThreeProbesData = [(tt_dd_gg_gauss_noN,tt_td_dd_dg_gg_gauss_noN),
                    (tt_gg_kk_gauss_noN,tt_tg_gg_gk_kk_gauss_noN),
                    (tt_gg_kk_sim_noN,tt_tg_gg_gk_kk_sim_noN),
                    (dd_gg_kk_sim_noN, dd_dg_gg_gk_kk_sim_noN),
-                   (dd_gg_kk_gauss_noN, dd_dg_gg_gk_kk_gauss_noN)
+                   (dd_gg_kk_gauss_noN, dd_dg_gg_gk_kk_gauss_noN),
                    (tt_gg_kk_sim,tt_tg_gg_gk_kk_sim),
                    (tt_dd_kk_gauss,tt_td_dd_dk_kk_gauss),
                    (tt_gg_kk_gauss,tt_tg_gg_gk_kk_gauss),
@@ -757,10 +712,6 @@ def EntropyComparison(data, avrg, target, MCsteps=100000):
 
 
 
-EntropyComparison(FourProbesData, 1, './TestingCode.yml',
-                  MCsteps=8000)
-
-
 gaussianity_hist = []
 #TDGKs = LoadAndComputeEntropy(FourProbesData[1][0], FourProbesData[1][1], steps=300)
 #TGKg = LoadAndComputeEntropy(ThreeProbesData[-5][0], ThreeProbesData[-5][1], steps=300)
@@ -832,3 +783,9 @@ for data in TwoProbesData[9:]:
 Chi2ComparisonPlot(gaussianity_hist,
                    './Plots/GaussianityTest/Half_Prior2.pdf',
                    labels=labels)'''
+
+
+if __name__ == "__main__":
+    print("Executing Entropy Comparison")
+    EntropyComparison(FourProbesData, 1, '../YAML/TestingCode.yml',
+                      MCsteps=8000)
