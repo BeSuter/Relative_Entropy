@@ -9,6 +9,8 @@ import warnings
 import numpy as np
 import multiprocessing as mp
 
+from p_tqdm import p_map
+#from tqdm import tqdm
 from scipy.stats import gaussian_kde
 from datetime import datetime
 
@@ -39,7 +41,7 @@ def MonteCarloENTROPY(prior, post, steps, error=False,
     """
     #tart = datetime.now()
     
-    pool = mp.Pool(mp.cpu_count())
+    #pool = mp.Pool(mp.cpu_count())
     warnings.simplefilter("error", RuntimeWarning)
     
     #Load data
@@ -114,8 +116,11 @@ def MonteCarloENTROPY(prior, post, steps, error=False,
     #post_prob = post_kernel.evaluate(sample_points)'''
     
     #Parallel compute g_i and f_i
-    prior_prob = pool.map(prior_kernel.evaluate, [row for row in sample_points])
-    post_prob = pool.map(post_kernel.evaluate, [row for row in sample_points])
+    #prior_prob = pool.map(prior_kernel.evaluate, [row for row in sample_points])
+    #post_prob = pool.map(post_kernel.evaluate, [row for row in sample_points])
+    print("Using p_map()")
+    prior_prob = p_map(prior_kernel.evaluate, [row for row in sample_points])
+    post_prob = p_map(post_kernel.evaluate, [row for row in sample_points])
     
     
     #Compute log(f_i/g_i), using log_2 for bit iterpretation
@@ -139,7 +144,7 @@ def MonteCarloENTROPY(prior, post, steps, error=False,
     entropy = sum(temp_res)/steps
     
     #time = datetime.now()-start
-    pool.close()
+    #pool.close()
     
     if error:
         error_estimate = np.var(temp_res)/steps

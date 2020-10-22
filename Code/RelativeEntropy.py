@@ -616,7 +616,9 @@ def EntropyComparison(data, avrg, target, MCsteps=100000):
         size1 = avrg
         size2 = avrg
         for i in range(avrg):
+            print(f"Computing MonteCarloENTROPY {i+1}/{avrg}")
             tmp_mc.append(MonteCarloENTROPY(names[0],names[1], MCsteps))
+            print(f"Computing gaussian approximation with no convergence {i+1}/{avrg}")
             gauss_approx = LoadAndComputeEntropy(names[0], names[1], steps=1)
             tmp = [gauss_approx[2][-1], gauss_approx[3][-1],
                    gauss_approx[-3][-1], gauss_approx[-4][-1]]
@@ -627,6 +629,7 @@ def EntropyComparison(data, avrg, target, MCsteps=100000):
                 tmp_gauss_sD.append(gauss_approx[-2][-1])
             else:
                 size1 -= 1
+            print(f"Computing gaussian approximation with convergence {i+1}/{avrg}")
             gauss_approx_conv = LoadAndComputeEntropy(names[0], names[1], steps=300)
             tmp = [gauss_approx_conv[2][-1], gauss_approx_conv[3][-1], 
                    gauss_approx_conv[-3][-1], gauss_approx_conv[-4][-1]]

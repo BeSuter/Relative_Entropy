@@ -12,6 +12,7 @@ import multiprocessing as mp
 
 from scipy.stats import boxcox, boxcox_normmax
 from scipy.stats import gaussian_kde, multivariate_normal
+from p_tqdm import p_map
 from surprise import Surprise
 from datetime import datetime
 
@@ -347,14 +348,12 @@ def MonteCarloENTROPY(prior, post, steps, error=False,
     Returns:
         entropy (float): Approximation of the relative entropy
     """
-    '''start = datetime.now()'''
-    cpu_count = 4
+    cpu_count = mp.cpu_count()
     
     #Assert that steps > cpu_count to prevent empty arrays in parallel compute
     if steps < cpu_count:
         cpu_count = steps
-    
-    pool = mp.Pool(cpu_count)
+
     warnings.simplefilter("error", RuntimeWarning)
     
     
@@ -416,10 +415,12 @@ def MonteCarloENTROPY(prior, post, steps, error=False,
     sample_points = post_kernel.resample(size=steps).T
     
     #Parallel compute g_i and f_i
-    prior_prob = pool.map(prior_kernel.evaluate,
-                          [sample_points[i::cpu_count].T for i in range(cpu_count)])
-    post_prob = pool.map(post_kernel.evaluate,
-                         [sample_points[i::cpu_count].T for i in range(cpu_count)])
+    prior_prob = p_map(prior_kernel.evaluate,
+                       [sample_points[i::cpu_count].T for i in range(cpu_count)],
+                       desc="Evaluating prior probability")
+    post_prob = p_map(post_kernel.evaluate,
+                      [sample_points[i::cpu_count].T for i in range(cpu_count)],
+                      desc="Evaluating posterior probability")
     
     
     #Compute log(f_i/g_i), using log_2 for bit iterpretation
@@ -475,9 +476,6 @@ def MonteCarloENTROPY(prior, post, steps, error=False,
         print('Something was wrong with iterating log2 values.\n', 
               'MC Entropy was probably estimated with a low count number...')
     entropy = tot_sum/steps
-    
-    '''time = datetime.now()-start'''
-    pool.close()
     
     if error:
         error_estimate = np.var(temp_res)/steps
