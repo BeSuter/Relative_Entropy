@@ -800,6 +800,6 @@ if __name__ == "__main__":
         data = ThreeProbesData
     elif data_type == "FourProbesData":
         data = FourProbesData
-    print(f"Executing Entropy Comparison for {data_type} with avrg={avrg} and MCstep={MCsteps}")
+    print(f"\nExecuting Entropy Comparison for {data_type} with avrg={avrg} and MCstep={MCsteps}\n")
     EntropyComparison(data, avrg, f"../YAML/{data_type}_avrg{avrg}_MCsteps{MCsteps}TEST.yml",
                       MCsteps=MCsteps)
