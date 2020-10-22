@@ -5,6 +5,7 @@ Created on Mon Mar  23 11:44:14 2020
 
 @author: BenjaminSuter
 """
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -789,8 +790,16 @@ Chi2ComparisonPlot(gaussianity_hist,
 
 
 if __name__ == "__main__":
-    print("Executing Entropy Comparison")
-    EntropyComparison(TwoProbesData, 15, '../YAML/TwoProb_avrg15_MCsteps150000.yml',
-                      MCsteps=150000)
-    EntropyComparison(ThreeProbesData, 20, '../YAML/TwoProb_avrg20_MCsteps150000.yml',
-                      MCsteps=150000)
+    args = sys.argv[1:]
+    data_type = args[0]
+    avrg = int(args[1])
+    MCsteps = int(args[2])
+    if data_type == "TwoProbesData":
+        data = TwoProbesData
+    elif data_type == "ThreeProbesData":
+        data = ThreeProbesData
+    elif data_type == "FourProbesData":
+        data = FourProbesData
+    print(f"Executing Entropy Comparison for {data_type} with avrg={avrg} and MCstep={MCsteps}")
+    EntropyComparison(data, avrg, f"../YAML/{data_type}_avrg{avrg}_MCsteps{MCsteps}TEST.yml",
+                      MCsteps=MCsteps)
