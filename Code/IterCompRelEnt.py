@@ -174,11 +174,11 @@ def IterativeEntropy(pri_data, post_data, iterations, mode='add'):
         cach_sD.append(sD)
         convergence_flag = 0
         if steps > 3 and not None in cach_rel_ent[-4:]:
-            if abs(cach_rel_ent[-1] - cach_rel_ent[-2]) < 0.005:
+            if abs(cach_rel_ent[-1] - cach_rel_ent[-2])/cach_rel_ent[-2] < 0.001:
                 convergence_flag += 1
-            if abs(cach_rel_ent[-1] - cach_rel_ent[-3]) < 0.0075:
+            if abs(cach_rel_ent[-1] - cach_rel_ent[-3])/cach_rel_ent[-3] < 0.005:
                 convergence_flag += 1
-            if abs(cach_rel_ent[-1] - cach_rel_ent[-4]) < 0.01:
+            if abs(cach_rel_ent[-1] - cach_rel_ent[-4])/cach_rel_ent[-4] < 0.005:
                 convergence_flag += 1
         if convergence_flag == 3:
             print('Convergence reached')
@@ -423,7 +423,7 @@ def MonteCarloENTROPY(prior, post, steps, error=False,
                       desc="Evaluating posterior probability")
     
     
-    #Compute log(f_i/g_i), using log_2 for bit iterpretation
+    #Compute log(f_i/g_i), using log_2 for bit interpretation
     try:
         quotient = np.divide(post_prob,prior_prob)
     #Catch 'divide by zero' and adjust steps for invalide probes

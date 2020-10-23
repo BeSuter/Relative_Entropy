@@ -377,7 +377,7 @@ tt_tk_kk_sim_noN = "../Samples/tt_tk_kk_samples_sim_nonuisance.npy"
                     "\sigma_8"],
                    'test plot',
                    '../Plots/Contour/tt_tk_kk_sim_noN.pdf', burning=320000)'''
-tt_tk_kk_gauss_noN = "./Samples/tt_tk_kk_samples_Gaussian_nonuisance.npy"
+tt_tk_kk_gauss_noN = "../Samples/tt_tk_kk_samples_Gaussian_nonuisance.npy"
 #320000
 '''GetDistContourPlot(tt_tk_kk_gauss_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
