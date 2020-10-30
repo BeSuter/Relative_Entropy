@@ -299,6 +299,7 @@ Cross_Sim = "../Samples/4probes_cross_samples_sim.npy"
 #
 #Two probes auto-correlated
 tt_kk_sim_noN = "../Samples/tt_kk_samples_sim_nonuisance.npy"
+
 #480000
 '''GetDistContourPlot(tt_kk_sim_noN,
                    ["h", "\Omega_m", "\Omega_b", "n_s",
@@ -582,7 +583,7 @@ FourProbesData = [(Auto_Gaussian, Cross_Gaussian),
 
 
 
-def EntropyComparison(data, avrg, target, MCsteps=100000):
+def EntropyComparison(data, avrg, target, burn_in=None, MCsteps=100000):
     """
     Will compute the relative entropy via monte carlo integration and the
     Surprise package and write the results to a YAML file.
@@ -618,9 +619,11 @@ def EntropyComparison(data, avrg, target, MCsteps=100000):
         size2 = avrg
         for i in range(avrg):
             print(f"Computing MonteCarloENTROPY {i+1}/{avrg}")
-            tmp_mc.append(MonteCarloENTROPY(names[0],names[1], MCsteps))
+            tmp_mc.append(MonteCarloENTROPY(names[0],names[1], MCsteps,
+                                            pri_burn=burn_in, post_burn=burn_in))
             print(f"Computing gaussian approximation with no convergence {i+1}/{avrg}")
-            gauss_approx = LoadAndComputeEntropy(names[0], names[1], steps=1)
+            gauss_approx = LoadAndComputeEntropy(names[0], names[1], steps=1,
+                                                 pri_burn=burn_in, post_burn=burn_in)
             tmp = [gauss_approx[2][-1], gauss_approx[3][-1],
                    gauss_approx[-3][-1], gauss_approx[-4][-1]]
             if not gauss_approx[-1] and not None in tmp:
@@ -674,14 +677,17 @@ def EntropyComparison(data, avrg, target, MCsteps=100000):
             gauss_conv_S = None
             gauss_conv_sD = None
         
-        
+        if burn_in == None:
+            burn = 0.5
+        else:
+            burn = burn_in
         tmp = np.load(names[0])
-        pri_burn = int(np.shape(tmp)[0]/2)
+        pri_burn = int(np.shape(tmp)[0] * burn)
         del(tmp)
         data1 = np.load(names[0])[pri_burn:,:5]
         
         tmp = np.load(names[1])
-        pri_burn = int(np.shape(tmp)[0]/2)
+        pri_burn = int(np.shape(tmp)[0] * burn)
         del(tmp)
         data2 = np.load(names[1])[pri_burn:,:5]
         sc = Surprise()
@@ -794,6 +800,10 @@ if __name__ == "__main__":
     data_type = args[0]
     avrg = int(args[1])
     MCsteps = int(args[2])
+    try:
+        burn_in = float(args[3])
+    except:
+        burn_in = None
     if data_type == "TwoProbesData":
         data = TwoProbesData
     elif data_type == "ThreeProbesData":
@@ -802,4 +812,4 @@ if __name__ == "__main__":
         data = FourProbesData
     print(f"\nExecuting Entropy Comparison for {data_type} with avrg={avrg} and MCstep={MCsteps}\n")
     EntropyComparison(data, avrg, f"../YAML/{data_type}_avrg{avrg}_MCsteps{MCsteps}TEST.yml",
-                      MCsteps=MCsteps)
+                      burn_in=burn_in, MCsteps=MCsteps)

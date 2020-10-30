@@ -204,8 +204,10 @@ def LoadAndComputeEntropy(prior, post, steps=300,
                      default is 300
         pri_burn (int): Number of data points cut off at begining of prior
                         sample data; default is 50%
+                        now can also be percentages (0,1)
         post_burn (int): Number of data points cut off at begining of post
                          sample data; default is 50%
+                         now can also be percentages (0,1)
         params (list): List which indicates what varied parameters should be
                        used when computing the relative entropy
                        h = 0, Omega_m = 1, Omega_b = 2, N_s = 3, sigma_8 = 4
@@ -226,6 +228,11 @@ def LoadAndComputeEntropy(prior, post, steps=300,
         pri_burn = int(np.shape(tmp)[0]/2)
         del(tmp)
         prior_data = np.load(prior)[pri_burn:,:]
+    elif isinstance(prior, str) and pri_burn < 1:
+        tmp = np.load(prior)
+        pri_burn = int(np.shape(tmp)[0] * pri_burn)
+        del(tmp)
+        prior_data = np.load(prior)[pri_burn:,:]
     elif isinstance(prior, str):
         prior_data = np.load(prior)[pri_burn:,:]
     elif isinstance(prior, np.ndarray):
@@ -238,6 +245,11 @@ def LoadAndComputeEntropy(prior, post, steps=300,
     if isinstance(post, str) and not post_burn:
         tmp = np.load(post)
         post_burn = int(np.shape(tmp)[0]/2)
+        del(tmp)
+        post_data = np.load(post)[post_burn:,:]
+    elif isinstance(post, str) and post_burn < 1:
+        tmp = np.load(post)
+        post_burn = int(np.shape(tmp)[0] * post_burn)
         del(tmp)
         post_data = np.load(post)[post_burn:,:]
     elif isinstance(post, str):
@@ -337,8 +349,10 @@ def MonteCarloENTROPY(prior, post, steps, error=False,
         error (bool): If True will return an error estimate
         pri_burn (int): Number of data points cut off at begining of prior
                         sample data; default is 50%
+                        now can also be percentages (0,1)
         post_burn (int): Number of data points cut off at begining of post
                          sample data; default is 50%
+                         now can also be percentages (0,1)
         params (list): List which indicates what varied parameters should be
                        used when computing the relative entropy
                        h = 0, Omega_m = 1, Omega_b = 2, N_s = 3, sigma_8 = 4
@@ -362,6 +376,11 @@ def MonteCarloENTROPY(prior, post, steps, error=False,
         pri_burn = int(np.shape(tmp)[0]/2)
         del(tmp)
         prior_data = np.load(prior)[pri_burn:,params]
+    elif isinstance(prior, str) and pri_burn < 1:
+        tmp = np.load(prior)
+        pri_burn = int(np.shape(tmp)[0] * pri_burn)
+        del (tmp)
+        prior_data = np.load(prior)[pri_burn:, params]
     elif isinstance(prior, str):
         prior_data = np.load(prior)[pri_burn:,params]
     elif isinstance(prior, np.ndarray):
@@ -374,6 +393,11 @@ def MonteCarloENTROPY(prior, post, steps, error=False,
         post_burn = int(np.shape(tmp)[0]/2)
         del(tmp)
         post_data = np.load(post)[post_burn:,params]
+    elif isinstance(prior, str) and post_burn < 1:
+        tmp = np.load(post)
+        post_burn = int(np.shape(tmp)[0] * post_burn)
+        del (tmp)
+        post_data = np.load(post)[post_burn:, params]
     elif isinstance(post, str):
         post_data = np.load(post)[post_burn:,params]
     elif isinstance(post, np.ndarray):
