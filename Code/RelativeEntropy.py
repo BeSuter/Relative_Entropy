@@ -795,7 +795,7 @@ Chi2ComparisonPlot(gaussianity_hist,
                    labels=labels)'''
 
 
-if __name__ == "__main__":
+"""if __name__ == "__main__":
     args = sys.argv[1:]
     data_type = args[0]
     avrg = int(args[1])
@@ -812,4 +812,8 @@ if __name__ == "__main__":
         data = FourProbesData
     print(f"\nExecuting Entropy Comparison for {data_type} with burn-in={burn_in} avrg={avrg} and MCstep={MCsteps}\n")
     EntropyComparison(data, avrg, f"../YAML/{data_type}_burn={burn_in}_avrg={avrg}_MCsteps={MCsteps}TEST.yml",
-                      burn_in=burn_in, MCsteps=MCsteps)
+                      burn_in=burn_in, MCsteps=MCsteps)"""
+
+if __name__ == "__main__":
+    mc = LoadAndComputeEntropy(Auto_Sim, Cross_Sim, steps=3)
+    print(mc[:][0])

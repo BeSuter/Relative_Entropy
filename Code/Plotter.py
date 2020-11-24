@@ -283,6 +283,7 @@ def PrettyName(name):
     tmp = tmp.replace('samples', '')
     tmp = tmp.replace('Gaussian', 'gauss')
     tmp = tmp.replace('_', '')
+    tmp = tmp.replace('/','')
     final = tmp.replace('nonuisance', '_noN')
     return final
 
@@ -318,13 +319,17 @@ def EntropyComparisonPlot(data_path, target):
         tmp = []
         keys.append(PrettyName(key))
         for string in data[key]:
-            res = [re.findall(r'(-?\d+\.\d+)', string)[0]]
-            tmp.append(float(res[0]))
+            if string == 'None':
+                tmp.append(np.NAN)
+            else:
+                test = re.findall(r'(-?\d+\.\d+)', string)
+                res = [test[0]]
+                tmp.append(float(res[0]))
         MCresults.append(tmp[0])
         MCerror.append(tmp[1])
         GaussResults.append(tmp[2])
         GaussError.append(tmp[3])
-    for i in len(MCresults):
+    for i in range(len(MCresults)):
         if MCresults[i] > GaussResults[i]:
             tmp = (1 - (GaussResults[i]/MCresults[i]))*100
             RelDiff.append(tmp)
@@ -347,5 +352,90 @@ def EntropyComparisonPlot(data_path, target):
     ax2.bar(keys, RelDiff, width=0.2, label='Rel. Diff')
     plt.savefig(target, format='pdf')
     ax1.legend()
-    
+
+
+
+def RelativeDiff(a,b):
+    if np.isnan(a) or np.isnan(b):
+        res = np.nan
+    elif a < b:
+        res = (1-a/b)*100
+    else:
+        res = (1-b/a)*100
+    return res
+
+def PrettyString(x):
+    tmp = x.replace('samples', '')
+    tmp = tmp.replace('nonuisance', 'N')
+    tmp = tmp.replace('Gaussian', 'g')
+    tmp = tmp.replace('sim', 's')
+    tmp = tmp.replace('tt', 'T')
+    tmp = tmp.replace('dd', 'D')
+    tmp = tmp.replace('kk', 'K')
+    tmp = tmp.replace('gg', 'G')
+    tmp = tmp.replace('_', '')
+    tmp = tmp.replace('/','')
+    if tmp[-1] == "g":
+        tmp = "Gaussian"
+    if tmp[-1] == "s":
+        tmp = "Sim"
+    if tmp[-2:] == "gN":
+        tmp = "Gaussian no nuisance"
+    if tmp[-2:] == "sN":
+        tmp = "Sim no nuisance"
+    return tmp
+
+def YAMLplot(file_path, target_path):
+    with open(file_path, 'r') as yaml_file:
+        data = yaml.load(yaml_file)
+    data.pop('Names')
+
+    keys = []
+    MCresults = []
+    MCerr = []
+    Gresults = []
+    Gconv = []
+    noBCent = []
+    for key in data:
+        keys.append(PrettyString(key))
+        res = [np.nan if val=='None' else val for val in data[key]]
+        MCresults.append(float(res[0]))
+        MCerr.append(float(res[1]))
+        Gresults.append(float(res[2]))
+        Gconv.append(float(res[7]))
+        noBCent.append(float(res[-2]))
+    #Compute the relative difference between results
+    MC_G_diff = []
+    MC_C_diff = []
+    MC_B_diff = []
+    for i in range(len(keys)):
+        MC_G_diff.append(RelativeDiff(MCresults[i],Gresults[i]))
+        MC_C_diff.append(RelativeDiff(MCresults[i],Gconv[i]))
+        MC_B_diff.append(RelativeDiff(MCresults[i],noBCent[i]))
+
+    fig = plt.figure(figsize=(16,6))
+    ax1 = fig.add_axes([0.1, 0.35, 0.8, 0.6],
+                       ylabel='Relative Entropy [Bits]',
+                       xticklabels=[],
+                       title='Entropy Comparison')
+    ax2 = fig.add_axes([0.1, 0.15, 0.8, 0.2],
+                       ylabel='Diff. in %')
+
+    ax1.errorbar(keys, Gresults, marker='o', color=(1,0,0,0.6), ls='none',
+                 label='Gauss Entropy')
+    ax1.errorbar(keys, Gconv, marker='o', color=(0,1,0,0.6), ls='none',
+                 label='Gauss Entropy Converged')
+    ax1.errorbar(keys, noBCent, marker='o', color=(0,0,1,0.6), ls='none',
+                 label='no BoxCox Entropy')
+    ax1.errorbar(keys, MCresults, yerr=MCerr, marker='*', color='black', ls='none',
+                 label='Monte Carlo Entropy')
+    ax2.bar(keys, MC_G_diff, width=0.2, color=(1,0,0,0.6),label='MC to Gauss')
+    ax2.bar(keys, MC_C_diff, width=0.2, color=(0,1,0,0.6), align='edge',label='MC to Conv.')
+    ax2.bar(keys, MC_B_diff, width=-0.2, color=(0,0,1,0.6), align='edge',label='MC to no BC')
+    ax1.legend()
+    ax2.legend()
+    ax1.grid(True, axis='y')
+    ax2.grid(True, axis='y')
+    #plt.show()
+    plt.savefig(target_path, format='pdf')
     

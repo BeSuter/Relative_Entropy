@@ -154,66 +154,67 @@ def PrettyString(x):
     tmp = tmp.replace('kk', 'K')
     tmp = tmp.replace('gg', 'G')
     tmp = tmp.replace('_', '')
+    tmp = tmp.replace('/','')
     return tmp
 
-'''target = 'ThreeProb_avrg10_MCsteps50000.yml'
-with open(target, 'r') as yaml_file:
-    data = yaml.load(yaml_file)
-data.pop('Names')
+def YAMLplot(file_path, target_path):
+    with open(file_path, 'r') as yaml_file:
+        data = yaml.load(yaml_file)
+    data.pop('Names')
 
-keys = []
-MCresults = []
-MCerr = []
-Gresults = []
-Gconv = []
-noBCent = []
-for key in data:
-    keys.append(PrettyString(key))
-    res = [np.nan if val=='None' else val for val in data[key]]
-    MCresults.append(float(res[0]))
-    MCerr.append(float(res[1]))
-    Gresults.append(float(res[2]))
-    Gconv.append(float(res[7]))
-    noBCent.append(float(res[-2]))
-#Compute the relative difference between results
-MC_G_diff = []
-MC_C_diff = []
-MC_B_diff = []
-for i in range(len(keys)):
-    MC_G_diff.append(RelativeDiff(MCresults[i],Gresults[i]))
-    MC_C_diff.append(RelativeDiff(MCresults[i],Gconv[i]))
-    MC_B_diff.append(RelativeDiff(MCresults[i],noBCent[i]))
+    keys = []
+    MCresults = []
+    MCerr = []
+    Gresults = []
+    Gconv = []
+    noBCent = []
+    for key in data:
+        keys.append(PrettyString(key))
+        res = [np.nan if val=='None' else val for val in data[key]]
+        MCresults.append(float(res[0]))
+        MCerr.append(float(res[1]))
+        Gresults.append(float(res[2]))
+        Gconv.append(float(res[7]))
+        noBCent.append(float(res[-2]))
+    #Compute the relative difference between results
+    MC_G_diff = []
+    MC_C_diff = []
+    MC_B_diff = []
+    for i in range(len(keys)):
+        MC_G_diff.append(RelativeDiff(MCresults[i],Gresults[i]))
+        MC_C_diff.append(RelativeDiff(MCresults[i],Gconv[i]))
+        MC_B_diff.append(RelativeDiff(MCresults[i],noBCent[i]))
+
+    fig = plt.figure(figsize=(16,6))
+    ax1 = fig.add_axes([0.1, 0.35, 0.8, 0.6],
+                       ylabel='Relative Entropy [Bits]',
+                       xticklabels=[],
+                       title='Entropy Comparison')
+    ax2 = fig.add_axes([0.1, 0.15, 0.8, 0.2],
+                       ylabel='Diff. in %')
+
+    ax1.errorbar(keys, Gresults, marker='o', color=(1,0,0,0.6), ls='none',
+                 label='Gauss Entropy')
+    ax1.errorbar(keys, Gconv, marker='o', color=(0,1,0,0.6), ls='none',
+                 label='Gauss Entropy Converged')
+    ax1.errorbar(keys, noBCent, marker='o', color=(0,0,1,0.6), ls='none',
+                 label='no BoxCox Entropy')
+    ax1.errorbar(keys, MCresults, yerr=MCerr, marker='*', color='black', ls='none',
+                 label='Monte Carlo Entropy')
+    ax2.bar(keys, MC_G_diff, width=0.2, color=(1,0,0,0.6),label='MC to Gauss')
+    ax2.bar(keys, MC_C_diff, width=0.2, color=(0,1,0,0.6), align='edge',label='MC to Conv.')
+    ax2.bar(keys, MC_B_diff, width=-0.2, color=(0,0,1,0.6), align='edge',label='MC to no BC')
+    ax1.legend()
+    ax2.legend()
+    ax1.grid(True, axis='y')
+    ax2.grid(True, axis='y')
+    #plt.show()
+    plt.savefig(target_path, format='pdf')
+
+
     
-fig = plt.figure(figsize=(16,6)) 
-ax1 = fig.add_axes([0.1, 0.35, 0.8, 0.6],
-                   ylabel='Relative Entropy [Bits]',
-                   xticklabels=[],
-                   title='Entropy Comparison')
-ax2 = fig.add_axes([0.1, 0.15, 0.8, 0.2],
-                   ylabel='Diff. in %')
-    
-ax1.errorbar(keys, Gresults, marker='o', color=(1,0,0,0.6), ls='none',
-             label='Gauss Entropy')
-ax1.errorbar(keys, Gconv, marker='o', color=(0,1,0,0.6), ls='none',
-             label='Gauss Entropy Converged')
-ax1.errorbar(keys, noBCent, marker='o', color=(0,0,1,0.6), ls='none',
-             label='no BoxCox Entropy')
-ax1.errorbar(keys, MCresults, yerr=MCerr, marker='*', color='black', ls='none',
-             label='Monte Carlo Entropy')
-ax2.bar(keys, MC_G_diff, width=0.2, color=(1,0,0,0.6),label='MC to Gauss')
-ax2.bar(keys, MC_C_diff, width=0.2, color=(0,1,0,0.6), align='edge',label='MC to Conv.')
-ax2.bar(keys, MC_B_diff, width=-0.2, color=(0,0,1,0.6), align='edge',label='MC to no BC')
-ax1.legend()
-ax2.legend()
-ax1.grid(True, axis='y')
-ax2.grid(True, axis='y')
-#plt.show()
-plt.savefig('./Plots/ThreeProbs.pdf', format='pdf')'''
 
-
-    
-
-sc = Surprise()
+'''sc = Surprise()'''
 '''cov = np.matrix([[2,0.1,0.1,0.1,0.1],
                  [0.1,2,0.1,0.1,0.1],
                  [0.1,0.1,2,0.1,0.1],
@@ -450,7 +451,7 @@ def DimensionTest(start, end, avrg, MCsteps=10000):
     ax1.legend()
     plt.savefig('./Plots/DimensionTestAnalytical.pdf', format='pdf')
 
-DimensionTest(1, 8, 20, MCsteps=25000)
+#DimensionTest(1, 8, 20, MCsteps=25000)
 
 def FiveDimDifferenceTest(steps, avrg, MCsteps=100000):
     MC = []
